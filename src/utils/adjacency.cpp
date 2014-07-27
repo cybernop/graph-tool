@@ -37,7 +37,11 @@ namespace Adjacency
             row.push_back(token);
             rowString.erase(0, pos + DELIMITER.length());
         }
-        row.push_back(rowString);
+        
+        if (rowString.compare("") != 0 && rowString.compare("\\") != 0)
+        {
+            row.push_back(rowString);
+        }
         
         return row;
     }

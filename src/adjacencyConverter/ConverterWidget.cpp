@@ -6,8 +6,11 @@
 //
 //
 
+#include <assert.h>
+
 #include <iostream>
 #include <string>
+#include <QString>
 
 #include "ConverterWidget.h"
 #include "ui_AdjacencyConverter.h"
@@ -41,7 +44,7 @@ void ConverterWidget::on_convertToTable_clicked()
     nElements_ = input.size();
     
     resizeTable();
-    ui_->tableWidget->setItem(1, 1, new QTableWidgetItem("1"));
+    fillTable(input);
 }
 
 void ConverterWidget::setupUi()
@@ -56,4 +59,24 @@ void ConverterWidget::resizeTable()
 {
     ui_->tableWidget->setRowCount(nElements_);
     ui_->tableWidget->setColumnCount(nElements_);
+}
+
+void ConverterWidget::fillTable(const std::vector<std::vector<std::string> > tableVectors)
+{
+    assert(tableVectors.size() == nElements_);
+    
+    size_t row = 0;
+    
+    for (const std::vector<std::string>& rowVector : tableVectors)
+    {
+        assert(rowVector.size() == nElements_);
+        
+        size_t col = 0;
+        
+        for (const std::string& entry : rowVector)
+        {
+            ui_->tableWidget->setItem(row, col++, new QTableWidgetItem(QString::fromStdString(entry)));
+        }
+        row++;
+    }
 }

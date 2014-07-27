@@ -31,6 +31,7 @@ private slots:
 private:
     void setupUi();
     void resizeTable();
+    void fillTable(std::vector<std::vector<std::string> > tableString);
     
     Ui::AdjacencyConverter *ui_;
     size_t nElements_;
