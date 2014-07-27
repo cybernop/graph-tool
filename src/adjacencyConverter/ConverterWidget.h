@@ -27,11 +27,14 @@ public:
 private slots:
     void on_convertToText_clicked();
     void on_convertToTable_clicked();
+    void on_tableSizeChanged_valueChanged(int);
     
 private:
     void setupUi();
     void resizeTable();
+    
     void fillTable(std::vector<std::vector<std::string> > tableString);
+    void readTable(std::vector<std::vector<std::string> >& result);
     
     Ui::AdjacencyConverter *ui_;
     size_t nElements_;

@@ -14,9 +14,11 @@
 
 namespace Adjacency
 {
-void splitIntoLines(std::vector <std::vector<std::string> >& result, const std::string& s);
+    void splitIntoLines(std::vector <std::vector<std::string> >& result, const std::string& s);
 
-std::vector <std::string> splitIntoRows(std::string& s);
+    std::vector <std::string> splitIntoRows(std::string& s);
+    
+    std::string vectorsToString(std::vector <std::vector<std::string> >& vectors);
 }
 
 #endif /* defined(__utils__adjacency__) */

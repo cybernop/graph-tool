@@ -13,7 +13,8 @@
 namespace Adjacency
 {
     
-    const std::string DELIMITER = ", ";
+    const std::string DELIMITER   = ", ";
+    const std::string LINE_ENDING = "\\";
     
     void splitIntoLines(std::vector <std::vector<std::string> >& result, const std::string& s)
     {
@@ -44,6 +45,22 @@ namespace Adjacency
         }
         
         return row;
+    }
+    
+    std::string vectorsToString(std::vector <std::vector<std::string> >& vectors)
+    {
+        std::string result;
+        
+        for (std::vector<std::string>& rowVector : vectors)
+        {
+            for (std::string& entry : rowVector)
+            {
+                result += entry + DELIMITER;
+            }
+            result += LINE_ENDING + "\n";
+        }
+        
+        return result.substr(0, result.length() - 4);
     }
     
 }
