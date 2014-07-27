@@ -19,12 +19,12 @@ find_package(Qt5Widgets)
 
 SET(SOURCE
     "main.cpp"
-    "CoverterWidget.cpp"
+    "ConverterWidget.cpp"
     "../utils/adjacency.cpp"
     )
 
 SET(HEADER
-    "CoverterWidget.h"
+    "ConverterWidget.h"
     "../utils/adjacency.h"
     )
     

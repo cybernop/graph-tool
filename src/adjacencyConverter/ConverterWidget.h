@@ -19,7 +19,7 @@ namespace Ui {
 class ConverterWidget : public QMainWindow
 {
     Q_OBJECT
-    
+
 public:
     explicit ConverterWidget(QWidget *parent = 0);
     ~ConverterWidget();
@@ -30,6 +30,9 @@ private slots:
     
 private:
     void setupUi();
-    Ui::AdjacencyConverter *ui;
+    void resizeTable();
+    
+    Ui::AdjacencyConverter *ui_;
+    size_t nElements_;
 };
 #endif /* defined(__AdjacencyConverter__CoverterWidget__) */

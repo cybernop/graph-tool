@@ -8,7 +8,7 @@
 
 #include <QApplication>
 
-#include "CoverterWidget.h"
+#include "ConverterWidget.h"
 
 
 int main(int argc, char *argv[])
