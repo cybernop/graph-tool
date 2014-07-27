@@ -6,8 +6,9 @@
 //
 //
 
-#include "CoverterWidget.h"
 #include <QApplication>
+
+#include "CoverterWidget.h"
 
 
 int main(int argc, char *argv[])

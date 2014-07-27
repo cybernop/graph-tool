@@ -11,6 +11,7 @@
 
 #include <QMainWindow>
 
+
 namespace Ui {
     class AdjacencyConverter;
 }
@@ -23,7 +24,12 @@ public:
     explicit ConverterWidget(QWidget *parent = 0);
     ~ConverterWidget();
     
+private slots:
+    void on_convertToText_clicked();
+    void on_convertToTable_clicked();
+    
 private:
+    void setupUi();
     Ui::AdjacencyConverter *ui;
 };
 #endif /* defined(__AdjacencyConverter__CoverterWidget__) */
